@@ -18,7 +18,10 @@ class LaravelLocalizationHelpersServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('potsky/laravel-localization-helpers');
+        // Publish config files
+        $this->publishes([
+            __DIR__.'/../config/config.php' => config_path('laravel-localization-helpers.php'),
+        ]);
 	}
 
 	/**
